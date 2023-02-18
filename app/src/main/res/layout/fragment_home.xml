@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    tools:context=".fragments.HomeFragment">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:layout_centerVertical="true">
+        <TextView
+            android:id="@+id/tvChosenForYou"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Chosen For Your"
+            android:textSize="20sp"
+            android:layout_margin="15dp"
+            android:textColor="@color/black"
+            android:textStyle="bold"/>
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/rvChosenForYou"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+            android:orientation="horizontal"
+            tools:listitem="@layout/item_home_rv"/>
+
+        <TextView
+            android:id="@+id/tvNewNoteworthy"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="New &amp; NoteWorthy"
+            android:textSize="20sp"
+            android:layout_margin="15dp"
+            android:textColor="@color/black"
+            android:textStyle="bold"/>
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/rvNewNoteworthy"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+            android:orientation="horizontal"
+            tools:listitem="@layout/item_home_rv"/>
+
+        <TextView
+            android:id="@+id/tvTopProducts"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Top Products"
+            android:textSize="20sp"
+            android:layout_margin="15dp"
+            android:textColor="@color/black"
+            android:textStyle="bold"/>
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/rvTopProducts"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+            android:orientation="horizontal"
+            tools:listitem="@layout/item_home_rv"/>
+    </LinearLayout>
+
+</RelativeLayout>

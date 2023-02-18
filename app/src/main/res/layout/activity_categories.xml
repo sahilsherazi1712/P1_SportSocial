@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".activities.CategoriesActivity">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+        <RelativeLayout
+            android:id="@+id/rlIcons"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="5dp">
+            <ImageView
+                android:id="@+id/imgBack"
+                android:layout_width="18dp"
+                android:layout_height="18dp"
+                android:src="@drawable/back_double"
+                android:layout_marginTop="5dp" />
+            <ImageView
+                android:id="@+id/imgCross"
+                android:layout_width="20dp"
+                android:layout_height="20dp"
+                android:layout_alignParentEnd="true"
+                android:src="@drawable/cross_round_circle"
+                android:layout_marginTop="5dp" />
+        </RelativeLayout>
+        <ImageView
+            android:id="@+id/logo"
+            android:layout_width="170dp"
+            android:layout_height="170dp"
+            android:layout_below="@id/rlIcons"
+            android:layout_centerHorizontal="true"
+            android:src="@drawable/ic_logo"
+            app:tint="@color/black" />
+
+        <RelativeLayout
+            android:id="@+id/rlBoxes"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:layout_margin="20dp"
+            android:layout_below="@id/logo">
+            <TextView
+                android:id="@+id/tvTeamDetail"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="We noticed"
+                android:textStyle="bold"
+                android:textColor="@color/black"/>
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/rvTeamCat"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/tvTeamDetail"
+                app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+                android:orientation="horizontal"
+                android:layout_marginTop="10dp"
+                tools:listitem="@layout/item_team_cat"/>
+
+            <ScrollView
+                android:id="@+id/sv"
+                android:layout_width="match_parent"
+                android:layout_height="300dp"
+                android:scrollbars="none"
+                android:layout_below="@id/rvTeamCat">
+                <androidx.recyclerview.widget.RecyclerView
+                    android:id="@+id/rvTeamList"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+                    android:orientation="vertical"
+                    android:layout_marginTop="10dp"
+                    android:layout_marginBottom="10dp"
+                    tools:listitem="@layout/item_category"/>
+            </ScrollView>
+
+            <Button
+                android:id="@+id/btnStartListing"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="40dp"
+                android:layout_marginTop="10dp"
+                android:layout_marginEnd="40dp"
+                android:padding="10dp"
+                android:text="Start Listing"
+                android:layout_below="@id/sv"
+                android:textAllCaps="false" />
+        </RelativeLayout>
+
+    </RelativeLayout>
+</RelativeLayout>

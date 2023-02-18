@@ -1,0 +1,133 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.core.widget.NestedScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:scrollbars="none"
+    tools:context=".fragments.GetPodcastFragment">
+
+    <!-- TODO: Update blank fragment layout -->
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <ImageView
+            android:id="@+id/imgHome"
+            android:layout_width="200dp"
+            android:layout_height="200dp"
+            android:src="@drawable/placeholder"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="50dp"
+            android:layout_marginBottom="20dp" />
+
+        <TextView
+            android:id="@+id/tvPlay"
+            android:layout_width="200dp"
+            android:layout_height="wrap_content"
+            android:drawablePadding="5dp"
+            android:text="Latest Episode"
+            android:layout_centerHorizontal="true"
+            android:background="@drawable/bg_et"
+            android:backgroundTint="@color/primaryColor"
+            android:layout_below="@id/imgHome"
+            android:textColor="@color/white"
+            android:textSize="18sp"
+            android:textStyle="bold"
+            android:padding="5dp"
+            android:gravity="center"
+            app:drawableStartCompat="@drawable/ic_baseline_play_arrow_24" />
+
+        <RelativeLayout
+            android:id="@+id/rlIcons"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="5dp"
+            android:layout_below="@id/tvPlay">
+
+            <ImageView
+                android:id="@+id/more"
+                android:layout_width="30dp"
+                android:layout_height="30dp"
+                android:layout_alignParentEnd="true"
+                android:layout_marginEnd="15dp"
+                android:backgroundTint="@null"
+                android:padding="4dp"
+                android:scaleType="fitCenter"
+                android:src="@drawable/more" />
+
+            <ImageView
+                android:id="@+id/download"
+                android:layout_width="30dp"
+                android:layout_height="30dp"
+                android:layout_toStartOf="@id/more"
+                android:backgroundTint="@null"
+                android:padding="4dp"
+                android:scaleType="fitCenter"
+                android:src="@drawable/download" />
+            <ImageView
+                android:id="@+id/imgFavourite"
+                android:layout_width="30dp"
+                android:layout_height="30dp"
+                android:layout_toStartOf="@id/download"
+                android:backgroundTint="@null"
+                android:padding="4dp"
+                android:scaleType="fitCenter"
+                android:src="@drawable/heart" />
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:id="@+id/rlTxt"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/rlIcons"
+            android:layout_margin="10dp"
+            android:orientation="vertical">
+            <TextView
+                android:id="@+id/title"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="title"
+                android:textSize="18sp"
+                android:textColor="@color/black" />
+            <io.github.glailton.expandabletextview.ExpandableTextView
+                android:id="@+id/description"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                app:collapsedLines="2"
+                app:animDuration="500"
+                app:readMoreText="More"
+                app:readLessText="Less"
+                android:textSize="14sp"
+                android:layout_marginTop="5dp"
+                android:textColor="@color/black"
+                android:layout_below="@id/title"
+                app:textMode="line"
+                android:text="" />
+
+        </RelativeLayout>
+
+        <TextView
+            android:id="@+id/episodes"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Episodes"
+            android:layout_below="@id/rlTxt"
+            android:background="@color/primaryColor"
+            android:textColor="@color/white"
+            android:layout_marginTop="10dp"
+            android:padding="10dp"
+            android:textSize="26sp"
+            android:textStyle="bold"/>
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/rvEpisodes"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/episodes"
+            app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+            android:orientation="vertical"
+            tools:listitem="@layout/item_podcast_episodes"
+            />
+    </RelativeLayout>
+
+</androidx.core.widget.NestedScrollView>
